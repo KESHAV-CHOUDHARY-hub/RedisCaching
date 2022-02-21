@@ -1,0 +1,26 @@
+server:
+  port: 7777
+  servlet:
+    context-path: /rediscashing
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+  cache:
+    type: redis
+    cache-names: keshav
+    redis:
+      time-to-live: 6000000
+  redis:
+    host: 127.0.0.1
+    port: 6379
